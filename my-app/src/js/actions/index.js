@@ -1,17 +1,18 @@
-import axios from "axios";
-import { SET_CUSTOMER_DETAILS } from "./types";
+export const FETCH_CUSTOMERS_BEGIN   = 'FETCH_CUSTOMERS_BEGIN';
+export const FETCH_CUSTOMER_SUCCESS = 'FETCH_CUSTOMER_SUCCESS';
+export const FETCH_CUSTOMER_FAILURE = 'FETCH_CUSTOMER_FAILURE';
 
-export function fetchCustomerDetails() {
-  return function(dispatch) {
-    return axios.get("https://jsonplaceholder.typicode.com/users").then(({ data }) => {
-      dispatch(setCustomerDetails(data));
-    });
-  };
-}
+export const fetchCustomersBegin = () => ({
+  type: FETCH_CUSTOMERS_BEGIN
+});
 
-function setCustomerDetails(data) {
-  return {
-    type: SET_CUSTOMER_DETAILS,
-    payload: data
-  };
-}
+export const fetchCustomersSuccess = customers => ({
+  type: FETCH_CUSTOMER_SUCCESS,
+  payload: { customers }
+});
+
+export const fetchCustomersFailure = error => ({
+  type: FETCH_CUSTOMER_FAILURE,
+  payload: { error }
+});
+
