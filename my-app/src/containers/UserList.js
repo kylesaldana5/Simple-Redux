@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { fetchCustomers } from "../js/actions/fetch";
 import styled from 'styled-components';
 import UserCard from '../components/UserCard';
+import { Link } from "react-router-dom";
 
 
 const Container = styled.div`
@@ -31,7 +32,7 @@ class UserList extends Component {
     return (
         <Container>
           {customers ? customers.map(customer =>     
-              <UserCard key={customer.id} id={customer.id} name={customer.name} userName={customer.username} handleRouting={this.handleRouting} />
+              <Link to={`/info/${customer.id}`}> <UserCard key={customer.id} id={customer.id} name={customer.name} userName={customer.username} /> </Link>
            ) : null}  
         </Container>
     );

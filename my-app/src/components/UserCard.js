@@ -7,7 +7,7 @@ const Container = styled.div`
 const UserCard = ({id, name, userName , handleRouting}) => {
   
     return (
-        <Container onClick={() => handleRouting(id)}>
+        <Container >
             <div className={'id'}>{id}</div>
             <div className={'name'}>{name}</div>
             <div className={'user-name'}>{userName}</div>
