@@ -1,14 +1,36 @@
-import React from 'react';
+import React, { Component } from "react";
+import { connect } from 'react-redux';
+import { fetchCustomerDetails } from "../js/actions/index";
+import { bindActionCreators } from 'redux';
 import UserList from '../components/UserList'
 
-function App() {
-  return (
-    <div>
-      <UserList/>
-    </div>
-  );
+
+class App extends Component {
+
+  componentDidMount() {
+    this.props.fetchCustomerDetails();
+  }
+  
+  render() { 
+    return (
+      <div>
+ 
+      </div>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = (data = {}) => ({
+  data: data.data
+});
+
+
+export default connect(
+  mapStateToProps,
+  {
+    fetchCustomerDetails
+  }
+)(App);
+
 
 

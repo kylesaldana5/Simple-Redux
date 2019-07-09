@@ -1,13 +1,14 @@
-import React, { Component } from 'react';
+import React from 'react';
+import styled from 'styled-components';
 
-class UserList extends Component {
-    render() {
-        return (
-            <div>
-               
-            </div>
-        );
-    }
+
+const UserList = () => {
+  
+    return (
+        <div>
+         
+        </div>
+    )
 }
 
 export default UserList;
