@@ -8,8 +8,17 @@ import { Link } from "react-router-dom";
 
 const Container = styled.div`
   display: grid;
-  grid-gap: 20px;
+  grid-gap: 25px 50px;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  padding: 0px 10px;
+`;
+
+const StyledLink = styled(Link)`
+    text-decoration: none;
+
+    &:focus, &:hover, &:visited, &:link, &:active {
+        text-decoration: none;
+    }
 `;
 
 class UserList extends Component {
@@ -21,6 +30,7 @@ class UserList extends Component {
   render() {
     const { error, loading, customers } = this.props;
 
+    //handle any loading or errors
     if (error) {
       return <div>Error! {error.message}</div>;
     }
@@ -30,11 +40,11 @@ class UserList extends Component {
     }
 
     return (
-        <Container>
-          {customers ? customers.map(customer =>     
-              <Link to={`/info/${customer.id}`}> <UserCard key={customer.id} id={customer.id} name={customer.name} userName={customer.username} /> </Link>
-           ) : null}  
-        </Container>
+      <Container>
+        {customers ? customers.map(customer =>
+          <StyledLink to={`/user/${customer.id}`} key={customer.id} > <UserCard key={customer.id} id={customer.id} name={customer.name} userName={customer.username} /> </StyledLink>
+        ) : null}
+      </Container>
     );
   }
 }
