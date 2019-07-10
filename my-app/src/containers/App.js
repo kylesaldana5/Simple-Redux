@@ -1,36 +1,19 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
-import { fetchCustomerDetails } from "../js/actions/index";
-import { bindActionCreators } from 'redux';
-import UserList from '../components/UserList'
+import styled from 'styled-components';
+import UserInfo from './UserInfo';
+import UserList from './UserList';
+import { Switch, Route,  } from "react-router-dom";
 
 
 class App extends Component {
-
-  componentDidMount() {
-    this.props.fetchCustomerDetails();
-  }
-  
-  render() { 
+  render() {
     return (
-      <div>
- 
-      </div>
+      <Switch>
+        <Route exact path='/' component={UserList} />
+        <Route path='/info' component={UserInfo} />
+      </Switch>
     );
   }
 }
 
-const mapStateToProps = (data = {}) => ({
-  data: data.data
-});
-
-
-export default connect(
-  mapStateToProps,
-  {
-    fetchCustomerDetails
-  }
-)(App);
-
-
-
+export default App;
