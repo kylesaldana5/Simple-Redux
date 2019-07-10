@@ -8,7 +8,7 @@ import store from "./js/store";
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App />
+      <App  />
     </BrowserRouter>
   </Provider>,
   document.getElementById("root")

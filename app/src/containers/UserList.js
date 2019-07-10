@@ -11,6 +11,9 @@ const Container = styled.div`
   grid-gap: 25px 50px;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   padding: 0px 10px;
+  padding: 20px;
+  margin-top: 25px;
+  background: #fff;
 `;
 
 const StyledLink = styled(Link)`

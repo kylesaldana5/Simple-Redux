@@ -6,7 +6,7 @@ const initialState = {
   error: null
 };
 
-export default function productReducer(state = initialState, action) {
+export default function customerReducer(state = initialState, action) {
   switch(action.type) {
     case FETCH_CUSTOMERS_BEGIN:
       // Mark the state as "loading" so we can show a spinner or something

@@ -8,6 +8,8 @@ const Container = styled.div`
     justify-content: center;
     align-items: center;
     font-family: 'Fjalla One', sans-serif;
+    text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
+    font-weight: 900;
     color: #272727;
     text-decoration: none;
     border: 5px solid rgba(0, 0, 0, 0.03);
@@ -16,9 +18,7 @@ const Container = styled.div`
 
     .item{
         margin: 10px 0px;
-        font-weight: 900;
         font-size: 20px;
-        text-shadow: 0 2px 0 rgba(0, 0, 0, 0.07);
     }
 `;
 const UserCard = ({id, name, userName , handleRouting}) => {
