@@ -3,7 +3,6 @@ import { connect } from 'react-redux';
 import { fetchCustomers } from "../js/actions/fetch";
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
-import { PulseLoader } from 'react-spinners';
 
 const Container = styled.div`
     display: flex;
@@ -30,16 +29,23 @@ const StyledLink = styled(Link)`
     font-family: 'Fjalla One', sans-serif;
     font-weight: 900;
     color: #272727;
+    font-size: 22px;
     &:focus, &:hover, &:visited, &:link, &:active {
         text-decoration: none;
     }
 `;
 
+// This really isnt a button but just a div disguised as a button to wrap the link tag and be styled. Possible better solution may be available 
 const StyledButton = styled.div`
     background-color: #ffc600;
     border-radius: 20px;
-    height: 20px;
-    width: 20px;
+    height: 38px;
+    width: 110px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 25px;
+
 `;
 class UserInfo extends Component {
 
