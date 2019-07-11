@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
-import { fetchCustomers } from "../js/actions/fetch";
+import { fetchCustomers } from "../modules/actions/fetch";
 import styled from 'styled-components';
 import { Link } from "react-router-dom";
 
